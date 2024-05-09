@@ -1,13 +1,11 @@
 #!/usr/bin/make -f
-# -*- makefile -*-
 
-# Uncomment this to turn on verbose mode.
-export DH_VERBOSE=1
+export DH_QUIET=1
 
 GRX_SO_VERSION = $(shell dpkg -s libgrx-3.0-dev  | grep -o -P 'libgrx-3.0-\d+\s' | cut -d "-" -f 3)
 
 %:
-	dh $@ --with gir
+	dh $@ --builddirectory=. --with gir
 
 override_dh_missing:
 	dh_missing --fail-missing

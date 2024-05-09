@@ -1,13 +1,17 @@
 cmake_minimum_required(VERSION 3.10)
-project ("ev3devkit" C)
+project("ev3devkit" C)
 
 include(GNUInstallDirs)
 
 get_directory_property(PARENT_DIR PARENT_DIRECTORY)
 
 if (NOT PARENT_DIR)
-    option (EV3DEVKIT_BUILD_DEMO "Build the demo programs" Yes)
+    option(EV3DEVKIT_BUILD_DEMO "Build the demo programs" Yes)
 endif (NOT PARENT_DIR)
+
+set(CMAKE_BUILD_TYPE Release)
+set(CMAKE_CXX_FLAGS_RELEASE "-O3 -s -pipe")
+set(CMAKE_INTERPROCEDURAL_OPTIMIZATION TRUE)
 
 list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 
@@ -181,7 +185,7 @@ add_custom_command (
     OUTPUT
         "${CMAKE_CURRENT_BINARY_DIR}/${GIR_NAME}-${GIR_VERSION}.typelib"
     COMMAND
-        ${G_IR_COMPILER_EXECUTABLE}
+        "g-ir-compiler"
     ARGS
         "${CMAKE_CURRENT_BINARY_DIR}/${GIR_NAME}-${GIR_VERSION}.gir"
         "--shared-library=$<TARGET_SONAME_FILE_NAME:${LIBRARY_NAME}-shared>"
@@ -192,7 +196,7 @@ add_custom_command (
         "${LIBRARY_NAME}-shared"
         "${CMAKE_CURRENT_BINARY_DIR}/${GIR_NAME}-${GIR_VERSION}.gir"
     COMMENT
-        "Genterating typelib."
+        "Genterating typelib"
 )
 
 add_custom_target ("${LIBRARY_NAME}-typelib"
@@ -301,7 +305,7 @@ if (EV3DEVKIT_BUILD_DEMO)
 
 endif (EV3DEVKIT_BUILD_DEMO)
 
-find_package (Valadoc)
+find_package(Valadoc QUIET)
 if (VALADOC_FOUND)
     include (ValadocGenerate)
     generate_valadoc (
@@ -320,7 +324,7 @@ if (VALADOC_FOUND)
     add_custom_target (doc ALL DEPENDS valadoc)
 endif (VALADOC_FOUND)
 
-# exports for locally including this proejct in another cmake project
+# exports for locally including this project in another cmake project
 
 configure_file (${PROJECT_NAME}Config.cmake.in ${PROJECT_NAME}-${GIR_VERSION}Config.cmake @ONLY)
 export (TARGETS ${LIBRARY_NAME}-static ${LIBRARY_NAME}-shared

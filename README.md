@@ -1,8 +1,7 @@
-# ev3devKit
+ev3devKit
+=========
 
 Programming toolkit for ev3dev
-
-## About
 
 This is a [GLib]/[GObject] based library that provides a number of programming
 interfaces for ev3dev, including user interface and device driver interface.
@@ -11,19 +10,15 @@ It is written in vala, but since it uses GObjects, it can be used with many
 
 For an example of how it is used, checkout [brickman].
 
-## Status
+Hacking
+-------
 
-This is currently in the development stages and is unstable.
+* Clone the repo
 
-
-## Get the code
-
-This project uses git and git submodules.
-
-    git clone --recursive git://github.com/ev3dev/ev3devKit
+    git clone --recursive https://github.com/ev3dev/ev3devKit
 
 
-## Cross-compiling for the EV3
+## Cross-compiling for the EV3 (to do)
 
 This requires that you have [Docker](https://www.docker.com) installed. (On
 Linux, you will also need to install the `qemu-user-static` package.)
@@ -61,4 +56,3 @@ API docs are at http://docs.ev3dev.org/projects/ev3devkit/en/ev3dev-bullseye/
 [GObjectIntrospection]: https://wiki.gnome.org/Projects/GObjectIntrospection
 [brickman]: https://github.com/ev3dev/brickman
 [brickstrap]: https://github.com/ev3dev/ev3dev/wiki/Using-brickstrap-to-cross-compile-and-debug
-

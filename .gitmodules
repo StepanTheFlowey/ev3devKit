@@ -1,7 +1,3 @@
 [submodule "cmake"]
 	path = cmake
-	url = git://github.com/dlech/vala-cmake-modules
-[submodule "doc/sphinx/_html_extra"]
-	path = doc/sphinx/_html_extra
-	url = https://github.com/ev3dev/ev3devKit.git
-	branch = html-extra
+	url = https://github.com/dlech/vala-cmake-modules
