@@ -1,7 +1,6 @@
 ev3devkit (0.6.0+fl0wey1) bullseye; urgency=medium
 
   * Non-maintainer upload
-  * Remove doc
   * LTO build
 
  -- Flowey <stepanmasirov@gmail.com>  Thu, 09 May 2024 12:23:37 +0000

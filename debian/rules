@@ -12,3 +12,6 @@ override_dh_missing:
 
 override_dh_gencontrol:
 	dh_gencontrol -- -Vgrx-so-version=$(GRX_SO_VERSION)
+
+execute_after_dh_auto_build:
+	strip -s -R .note* -R .comment ev3devKit-devices-demo ev3devKit-ui-demo libev3devkit-0.5.so.0.6.0
