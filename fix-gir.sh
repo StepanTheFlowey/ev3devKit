@@ -1,5 +1,4 @@
 #!/bin/bash
-
 set -e
 
 # add missing shared-library attribute
