@@ -40,7 +40,7 @@ ev3devkit (0.5.0) testing; urgency=medium
 ev3devkit (0.4.3) stable; urgency=medium
 
   [ Stefan Sauer ]
-  * fix big font is using small font 
+  * fix big font is using small font
 
   [ David Lechner ]
   * Fix inverted key_up/key_down events

@@ -3,23 +3,23 @@ Section: embedded
 Priority: optional
 Maintainer: David Lechner <david@lechnology.com>
 Build-Depends: debhelper (>= 12),
-    cmake,
-    gobject-introspection,
-    libgirepository1.0-dev,
-    libgrx-3.0-dev,
-    libgudev-1.0-dev,
-    netpbm,
-    valac (>= 0.24)
+               cmake,
+               gobject-introspection,
+               libgirepository1.0-dev,
+               libgrx-3.0-dev,
+               libgudev-1.0-dev,
+               netpbm,
+               valac (>= 0.24)
 Standards-Version: 4.5.0
 Homepage: https://www.ev3dev.org
-Vcs-Git: https://github.com/ev3dev/ev3devKit.git
-Vcs-Browser: https://github.com/ev3dev/ev3devKit
+Vcs-Git: https://github.com/StepanTheFlowey/ev3devKit.git
+Vcs-Browser: https://github.com/StepanTheFlowey/ev3devKit
 
 Package: libev3devkit-0.5-0
 Section: libs
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, ev3devkit-data (= ${source:Version}),
-    libgrx-3.0-${grx-so-version}-plugin-linuxfb
+         libgrx-3.0-${grx-so-version}-plugin-linuxfb
 Description: Programming toolkit for ev3dev
  Provides a GLib/GObject based library that provides a number of programming
  interfaces for ev3dev, including user interface and device driver interface.
