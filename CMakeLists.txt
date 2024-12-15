@@ -1,17 +1,17 @@
-cmake_minimum_required(VERSION 3.10)
-project("ev3devkit" C)
+cmake_minimum_required (VERSION 3.10)
+project ("ev3devkit" C)
 
-include(GNUInstallDirs)
+include (GNUInstallDirs)
 
 get_directory_property(PARENT_DIR PARENT_DIRECTORY)
 
 if (NOT PARENT_DIR)
-    option(EV3DEVKIT_BUILD_DEMO "Build the demo programs" Yes)
+    option (EV3DEVKIT_BUILD_DEMO "Build the demo programs" Yes)
 endif (NOT PARENT_DIR)
 
-set(CMAKE_BUILD_TYPE Release)
-set(CMAKE_CXX_FLAGS_RELEASE "-O3 -s -pipe")
-set(CMAKE_INTERPROCEDURAL_OPTIMIZATION TRUE)
+set (CMAKE_BUILD_TYPE Release)
+set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -s -pipe -march=armv5tej")
+set (CMAKE_INTERPROCEDURAL_OPTIMIZATION TRUE)
 
 list (APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
 

@@ -1,3 +1,10 @@
+ev3devkit (0.6.0+fl0wey2) bullseye; urgency=medium
+
+  * Non-maintainer upload
+  * Bit more optimization
+
+ -- Flowey <stepanmasirov@gmail.com>  Sun, 15 Dec 2024 13:52:26 +0000
+
 ev3devkit (0.6.0+fl0wey1) bullseye; urgency=medium
 
   * Non-maintainer upload
